@@ -15,8 +15,8 @@ game.module(
     },
 
     _startGame: function() {
-      new Rozie(100, 200);
-    }
+      new Rozie(game.config.system.width * 0.3, game.config.system.height * 0.5);
+    },
   });
 
   game.start();
