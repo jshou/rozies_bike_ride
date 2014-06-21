@@ -5,3 +5,5 @@ node_modules
 plugins
 editor
 bamboo
+*.css
+.sass-cache
