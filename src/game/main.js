@@ -2,7 +2,8 @@ game.module(
   'game.main'
 )
 .require(
-  'game.home_controller'
+  'game.home_controller',
+  'game.rozie'
 )
 .body(function() {
 
@@ -14,7 +15,7 @@ game.module(
     },
 
     _startGame: function() {
-      alert('hi');
+      new Rozie(100, 200);
     }
   });
 
