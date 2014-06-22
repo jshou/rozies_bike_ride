@@ -1,10 +1,10 @@
 game.module(
-    'game.pothole'
+  'game.pothole'
 )
 .body(function() {
   game.addAsset('pothole.png', 'pothole');
   Pothole = game.Class.extend({
-    movementAmount: 10,
+    speed: 3,
 
     init: function(x, y) {
       this.sprite = new game.Sprite('pothole');
@@ -14,8 +14,12 @@ game.module(
       this.x = x;
       this.y = y;
 
-      game.scene.stage.addChild(this.sprite);
+      game.scene.stage.addChildAt(this.sprite, 0); // potholes always spawn underneath everything else
       game.scene.addObject(this);
     },
+
+    update: function() {
+      this.sprite.position.x -= this.speed;
+    }
   });
 });

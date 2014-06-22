@@ -1,5 +1,5 @@
 game.module(
-    'game.rozie'
+  'game.rozie'
 )
 .require('engine.core', 'engine.keyboard')
 .body(function() {
@@ -12,8 +12,6 @@ game.module(
       this.sprite.anchor.x = this.sprite.anchor.y = 0.5; // anchor to the middle
       this.sprite.position.x = x;
       this.sprite.position.y = y;
-      this.x = x;
-      this.y = y;
 
       game.scene.stage.addChild(this.sprite);
       game.scene.addObject(this);
