@@ -13,6 +13,9 @@ game.module(
       this.sprite.position.x = x;
       this.sprite.position.y = y;
 
+      this.max = game.config.system.height - this.sprite.height / 2;
+      this.min = this.sprite.height / 2;
+
       game.scene.stage.addChild(this.sprite);
       game.scene.addObject(this);
     },
@@ -23,6 +26,8 @@ game.module(
       } else if (game.keyboard.down('DOWN')) {
         this.sprite.position.y += this.movementAmount;
       }
-    }
+
+      this.sprite.position.y = Math.min(Math.max(this.min, this.sprite.position.y), this.max);
+    },
   });
 });
