@@ -3,7 +3,8 @@ game.module(
 )
 .require(
   'game.home_controller',
-  'game.rozie'
+  'game.rozie',
+  'game.pothole'
 )
 .body(function() {
 
@@ -16,6 +17,8 @@ game.module(
 
     _startGame: function() {
       new Rozie(game.config.system.width * 0.3, game.config.system.height * 0.5);
+
+      new Pothole(game.config.system.width * 0.7, game.config.system.height * 0.5);
     },
   });
 
