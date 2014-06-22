@@ -11,8 +11,6 @@ game.module(
       this.sprite.anchor.x = this.sprite.anchor.y = 0.5; // anchor to the middle
       this.sprite.position.x = x;
       this.sprite.position.y = y;
-      this.x = x;
-      this.y = y;
 
       game.scene.stage.addChildAt(this.sprite, 0); // potholes always spawn underneath everything else
       game.scene.addObject(this);
@@ -20,6 +18,19 @@ game.module(
 
     update: function() {
       this.sprite.position.x -= this.speed;
+
+      if (this._outOfBounds()) {
+        this._destroy();
+      }
+    },
+
+    _outOfBounds: function() {
+      return this.sprite.position.x < this.sprite.width / 2 * -1
+    },
+
+    _destroy: function() {
+      game.scene.stage.removeChild(this.sprite);
+      game.scene.removeObject(this);
     }
   });
 });
