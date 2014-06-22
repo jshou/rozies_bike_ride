@@ -24,7 +24,7 @@ game.module(
 
     _spawnPothole: function() {
       var randomHeight = Math.random();
-      new Pothole(game.config.system.width + 10, game.config.system.height * randomHeight);
+      new Pothole(game.config.system.width + 150, game.config.system.height * randomHeight);
     }
   });
 
